@@ -1,0 +1,91 @@
+&inipar 
+    bl              = 20.0,
+    bl_inte         = 20.0,
+    eta             = 0.01,
+    epsilon         = 0.001,
+
+    start_t         = 0.0,
+    end_t           = 4500.0,
+    t_interval      = 0.75,
+    time_step       = 0.015,
+
+    idimen          = 5000,
+    ne              = 49,
+    ne1             = 5000,
+    mi              = 74,
+    n_max           = 30,
+
+    idp             = 2,
+    m_i             = 0.112202E-17,
+    N_i             = 100,
+    LWC             = 2.77500E-04,
+    r_i             = 0.21606E-06,
+    qv              = 1.60024E-02,
+    temp            = 2.92946E+02,
+    press           = 9.20100E+04,
+    w               = 8.46654E-01,
+    height          = 0.00000E+00,
+    rho_a           = 1.06728E+00,
+    aero            = 1,
+    cloudtopheight  = 0.0,
+
+    run_info        = 'EMPM3.0',
+
+    itd             = 1,
+    ire             = 0,
+    ent_rate        = 0.0013,
+    n_blob          = 1,
+    psigma          = 0.1,
+    iim             = 0,
+    icw             = 0,
+    ivp             = 1,
+    iinm            = 0,
+    icaw            = 1,
+    thsw            = 0.1,
+    iccn            = 1,
+    idc             = 1,
+    nccn            = 49,
+    m_ccn           = 1.0E-19,
+    r_ccn           = 9.332613E-08,
+    cb_ent          = 0,
+
+    r_pdf_nbin      = 100,
+    r_pdf_min       = 0.0,
+    r_pdf_max       = 50.0e-6,
+
+    qt_pdf_nbin     = 60,
+    qt_pdf_min      = 0.0,
+    qt_pdf_max      = 0.12,
+
+    scalar_pdf_nbin = 100,
+    qv_pdf_min      = 0.0,
+    qv_pdf_max      = 0.04,
+    temp_pdf_min    = 270.0,
+    temp_pdf_max    = 315.0,
+    SuS_pdf_min     = -1.0,
+    SuS_pdf_max     = 1.0,
+
+    mrealization    = 1,
+
+
+/
+
+
+&io_file
+    output_format   = 3,
+
+    i_profile_path  = '../data/',
+    i_profile_file  = 'BOMEX_environment_36.txt',
+
+    v_profile_path  = '../data/',
+    v_profile_file  = 'BOMEX_incloud_w_36_01.txt',
+
+    drop_path       = '../data/',
+    drop_file       = 'drop.data.new',
+
+    ccn_path        = '../data/',
+    ccn_file        = 'en_ccn.dat',
+
+    output_path     = '../output/',
+
+/

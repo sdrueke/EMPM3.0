@@ -1,0 +1,131 @@
+bl                 domain length (m)
+
+bl_inte            largest eddy size in the domain (m)
+
+teta               smallest eddy size, essentially the model's Komolgorov length scale (m)
+
+epsilon            dissipation rate of turbulent kinetic energy (m^2/s^3)
+
+start_t            start time for writing out droplet history and field data
+                   must follow start_t = n*t_interval, where n is an integer (s)
+end_t              end time for writing out droplet history and field data
+                   must follow end_t = n*t_interval, where n is an integer (s)
+
+t_interval         interval for writing out droplet history and field data
+                   must follow t_interval = n*dt, where n is an integer (s)
+
+time_step          time step for simulation (s)
+
+idimen             |
+ne                 | - array size for droplet properties
+ne1                |
+
+mi                 initial environmental (parcel) profile length
+
+n_max              maximal number of blobs possible
+
+idp                switch to set how initial droplet properties are determined
+                   1 - all droplet have the same properties (properties are given in namelist)
+                   2 - droplet size distribution is calculated using gamma function and number concentration (N_i) and qc_i
+                       (given in namelist)
+                   3 - droplet properties are read from file
+
+m_i                initial mass of the droplet solute (kg)
+
+N_i                initial droplet number concentration (1/cm^3)
+
+qc_i               initial liquid water content in cloud (kg/m^3)
+
+r_i                initial droplet radius (m)
+
+qv                 cloud base water vapor mixing ratio (kg/kg)
+temp               cloud base temperature (K)
+press              cloud base pressure (Pa)
+w                  cloud base vertical velocity (m/s)
+height             height above cloud base (m)
+
+rho_a              air density (kg/m^3)
+
+aero               type of aerosols (molecular weight and constants)
+                   1 = Sodium chloride
+                   2 = Ammonium sulfate
+
+cloudtopheight     cloud top height in meter at which the simulation is stopped
+                   (if cloudtopheight is not set in namelist or if the cloud top height cannot be reached within
+                   the time of the simulation (end_t, the simulation ends by the time (ent_t) set in namelist)
+
+itd                switch to set a time step for diffusion in namelist
+                   0/1 (no/yes)
+                   if it is set to no (0), the time step will be calculate in the model directly
+
+ire                switch to enable random variations of calculated time step for entrainment
+                   0/1 (no/yes)
+
+ent_rate           bluk entrainment rate (1/m)
+
+n_blob             number of entrained blobs per entrainment event
+
+psigma             size of the entrained parcel in relation to domain size (fraction)
+
+iim                switch to enable isobaric mixing
+                   0/1 (no/yes)
+
+icw                switch to enable constant vertical velocity
+                   0/1 (no/yes)
+                   if 0 is selected, the vertical velocity depends on buoyancy
+
+iinm               switch to enable instant mixing
+                   0/1 (no/yes)
+
+iccn               switch to include ccn in entrained air
+                   0 - no ccn are entrained
+                   1 - all entrained ccn have the same radius and mass
+                   2 - ccn radius and mass distribution are read from file
+
+idc                switch to enable constant droplet number in domain
+                   0/1 (no/yes)
+                   can only be used in combination with iccn=1
+
+nccn               number of ccn bins given in file
+
+m_ccn              mass of ccns if iccn is set to 1
+
+r_ccn              radius of ccns if iccn is set to 1
+
+cb_ent             switch to enable entrainment at cloud base (first time step)
+                   0/1 (no/yes)
+
+
+
+r_pdf_nbin         bin number for droplet radius pdf
+r_pdf_min          minimum value for droplet radius pdf
+r_pdf_max          maximum value for droplet radius pdf
+
+qt_pdf_nbin        bin number for total water mixing ratio pdf
+qt_pdf_min         minimum value for total water mixing ratio pdf
+qt_pdf_max         maximum value for total water mixing ratio pdf
+
+scalar_pdf_nbin    bin number for scalar (qv, T and s) pdf
+qv_pdf_min         minimum value for water vapor mixing ratio pdf
+qv_pdf_max         maximum value for water vapor mixing ratio pdf
+temp_pdf_min       minimum value for temperature pdf
+temp_pdf_max       maximum value for temperature pdf
+SuS_pdf_min        minimum value for supersaturation pdf
+SuS_pdf_max        maximum value for supersaturation pdf
+
+mrealization       number of realizations
+
+i_profile_path     path for the environmental profile
+i_profile_file     file name for the environmental profile
+
+v_profile_path     path for the incloud vertical velocity profile
+v_profile_file     file name for the incloud vertical velocity profile
+
+drop_path          path for the initial droplet size distribution
+drop_file          file name for the initial droplet size distribution
+
+ccn_path           path for the size distribution of ccn
+ccn_file           file name for the size distribution of ccn
+
+output_path        path for all output files (names of the output files are given within EMPM)
+
